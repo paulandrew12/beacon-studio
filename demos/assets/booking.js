@@ -372,7 +372,7 @@
     fetch(CFG.fnBase + '/pay-deposit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + CFG.key, 'apikey': CFG.key },
-      body: JSON.stringify({ slug: SLUG, booking_id: r.booking_id, provider: r.payment_provider, phone: f.phone })
+      body: JSON.stringify({ slug: SLUG, booking_id: r.booking_id, provider: r.payment_provider, phone: f.phone, return_url: location.origin + location.pathname })
     }).then(function (res) {
       return res.json().then(function (out) { return { ok: res.ok, out: out }; });
     }).then(function (w) {
