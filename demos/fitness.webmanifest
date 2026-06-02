@@ -1,0 +1,25 @@
+{
+  "id": "./fitness.html",
+  "name": "Forge Athletic Club",
+  "short_name": "Forge",
+  "description": "Strength, conditioning and community. Claim a free 7-day pass — booked in seconds.",
+  "start_url": "./fitness.html?utm_source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#070b07",
+  "theme_color": "#070b07",
+  "categories": ["health", "fitness", "sports"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "assets/icons/forge-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/forge-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/forge-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icons/forge-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Claim free week", "short_name": "Free pass", "url": "./fitness.html?utm_source=pwa#book" }
+  ]
+}

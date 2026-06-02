@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Native projects (regenerated from web app via `npx cap add`)
+/ios/
+/android/
+
+# OS / editor
+.DS_Store
+**/.DS_Store
+*.log
+
+# Unrelated media (local video project — not part of the app)
+/videos/
+/frames/
+
+# Root-level planning docs (Money-Hub sales kit, not the customer app)
+/index.html
+/plan.html
+/sprint.html
+/assets/

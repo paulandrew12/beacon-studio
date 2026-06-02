@@ -1,0 +1,25 @@
+{
+  "id": "./dental.html",
+  "name": "Lumina Dental Studio",
+  "short_name": "Lumina",
+  "description": "Book gentle, modern dentistry in seconds — same-week appointments, answered 24/7.",
+  "start_url": "./dental.html?utm_source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#050d1c",
+  "theme_color": "#050d1c",
+  "categories": ["health", "medical", "business"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "assets/icons/lumina-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/lumina-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/lumina-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icons/lumina-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Book an appointment", "short_name": "Book", "url": "./dental.html?utm_source=pwa#book" }
+  ]
+}

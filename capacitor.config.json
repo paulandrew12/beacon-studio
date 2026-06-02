@@ -1,0 +1,16 @@
+{
+  "appId": "com.beaconstudio.app",
+  "appName": "Beacon Studio",
+  "webDir": "demos",
+  "backgroundColor": "#070710",
+  "server": {
+    "androidScheme": "https",
+    "iosScheme": "https"
+  },
+  "ios": {
+    "contentInset": "always"
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}

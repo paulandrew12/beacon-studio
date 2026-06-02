@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who To Sell To — Target Prospects · Beacon Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/demo.css">
+<style>
+  .note{border-left:3px solid var(--brand);padding:12px 18px;margin:16px 0;color:var(--muted);
+    background:color-mix(in srgb,var(--brand) 7%,transparent);border-radius:0 12px 12px 0}
+  .note b{color:var(--ink)}
+  code{font-family:var(--mono);background:color-mix(in srgb,var(--ink) 10%,transparent);padding:2px 6px;border-radius:6px;font-size:.85em}
+
+  /* market context */
+  .mkt-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:14px}
+  @media(max-width:820px){.mkt-grid{grid-template-columns:1fr}}
+  .mkt{position:relative;border-radius:18px;padding:24px;background:var(--panel);border:1px solid var(--panel-line)}
+  .mkt h3{font-family:var(--display);font-size:1.35rem;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+  .mkt .flag{font-size:1.5rem}
+  .mkt .tline{color:var(--brand);font-weight:600;font-size:.9rem;margin-bottom:12px}
+  .mkt ul{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+  .mkt li{display:flex;gap:11px;align-items:flex-start;font-size:.95rem;line-height:1.55}
+  .mkt li b{color:var(--ink)}
+  .mkt .ck{flex:0 0 auto;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font-size:.75rem;font-weight:800;
+    color:#04121f;background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+
+  /* niche blocks */
+  .niche{margin-top:14px}
+  .niche-head{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-bottom:6px}
+  .niche-head .ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;
+    background:var(--panel);border:1px solid var(--panel-line)}
+  .niche-head h3{font-family:var(--display);font-size:1.5rem;margin:0}
+  .niche-head a.see{margin-left:auto;font-size:.85rem;font-weight:600;color:var(--brand);
+    border:1px solid var(--panel-line);padding:8px 14px;border-radius:999px;background:var(--panel)}
+  .niche-head a.see:hover{border-color:var(--brand)}
+  .why{color:var(--muted);font-size:.97rem;line-height:1.6;margin:6px 0 4px}
+  .math{display:inline-block;font-size:.85rem;font-weight:600;color:var(--ink);
+    background:color-mix(in srgb,var(--brand) 12%,transparent);border:1px solid var(--panel-line);
+    padding:7px 13px;border-radius:999px;margin:6px 0 16px}
+  .math b{color:var(--brand)}
+
+  .pros-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:820px){.pros-grid{grid-template-columns:1fr}}
+  .pcard{display:flex;flex-direction:column;border-radius:16px;padding:18px 18px 0;background:var(--panel);
+    border:1px solid var(--panel-line);transition:border-color .2s,transform .2s}
+  .pcard:hover{border-color:color-mix(in srgb,var(--brand) 45%,var(--panel-line));transform:translateY(-2px)}
+  .pc-head{display:flex;gap:12px;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--panel-line)}
+  .pc-head .flag{font-size:1.5rem;flex:0 0 auto}
+  .pc-head b{display:block;font-size:1.05rem;color:var(--ink)}
+  .pc-head span{font-size:.82rem;color:var(--muted)}
+  .pc-sec{padding:13px 0;border-bottom:1px solid color-mix(in srgb,var(--panel-line) 60%,transparent)}
+  .pc-lbl{display:block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--brand);margin-bottom:5px}
+  .pc-sec p{margin:0;font-size:.92rem;line-height:1.55;color:var(--ink-soft,#c9d4df)}
+  .pc-price{display:flex;gap:10px;padding:14px 0;margin-top:auto}
+  .pc-price span{flex:1;font-size:.8rem;color:var(--muted);background:color-mix(in srgb,var(--ink) 5%,transparent);
+    border-radius:10px;padding:9px 12px;text-align:center}
+  .pc-price b{display:block;font-size:1.02rem;color:var(--ink);font-family:var(--mono);margin-top:2px}
+  .seg{font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#04121f;
+    padding:3px 9px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));margin-left:auto}
+</style>
+</head>
+<body class="t-studio" data-motif="studio">
+<div id="progress"></div>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><span class="mk">B</span>Beacon&nbsp;Studio</a>
+  <div class="nav-links">
+    <a href="index.html">← Portfolio</a><a href="playbook.html">Playbook</a><a href="#kenya">Markets</a><a class="nav-cta" href="#dental">Prospects</a>
+  </div>
+</div></nav>
+
+<header class="hero" style="min-height:74vh"><canvas id="bg3d"></canvas>
+  <div class="wrap"><div style="max-width:780px">
+    <span class="pill"><span class="live"></span> Your hit-list · Kenya 🇰🇪 + US 🇺🇸</span>
+    <h1 class="hh">Who to sell to — <span class="grad">and exactly why they'll pay.</span></h1>
+    <p class="sub" style="max-width:52ch">Six niches that bleed leads every single day. For each one: the kind of business to hunt for, how to spot them on Maps and Instagram, the words that make them say yes, and what to charge — in both markets at once.</p>
+    <div class="hero-cta" style="margin-top:24px">
+      <a class="btn btn-primary" href="#dental">See the prospects →</a>
+      <a class="btn btn-ghost" href="playbook.html">The outreach scripts</a>
+    </div>
+  </div></div>
+</header>
+
+<section class="section tight"><div class="wrap">
+  <div class="note reveal"><b>How to use this page.</b> The business names below are <b>illustrative archetypes</b>, not real companies — composites of the kind of business that loses leads. Use each as a template: find a real local business that matches the <b>"Spot them by"</b> signals, clone the matching demo, swap in their real name and a couple of their real Google reviews (with permission), and lead with <i>"I already built you something — want to see it?"</i> Prices are starting points; charge for the value of the bookings you save, not the hours you spend.</div>
+</div></section>
+
+<section class="section tight" id="kenya"><div class="wrap">
+  <div class="center"><p class="eyebrow reveal">Read the room first</p><h2 class="hh reveal">Two markets, two pitches</h2>
+  <p class="lead reveal">The product is the same. The <i>reason it sells</i> is different in each market — lead with the right one.</p></div>
+  <div class="mkt-grid">
+    <div class="mkt reveal">
+      <h3><span class="flag">🇰🇪</span> Kenya</h3>
+      <div class="tline">WhatsApp is the front desk. M-Pesa is the checkout.</div>
+      <ul>
+        <li><span class="ck">✓</span><div><b>They live on Instagram &amp; WhatsApp</b>, not a website. Most have a Linktree or a Facebook page and take bookings by DM — so inquiries pile up unanswered and leak overnight.</div></li>
+        <li><span class="ck">✓</span><div><b>M-Pesa is universal.</b> A deposit request over M-Pesa feels normal and kills no-shows. Your booking widget takes the deposit the moment they book.</div></li>
+        <li><span class="ck">✓</span><div><b>Your edge:</b> a real, modern site <i>plus</i> an AI that answers WhatsApp instantly, books the slot, and collects an M-Pesa deposit — something almost none of their competitors have.</div></li>
+        <li><span class="ck">✓</span><div><b>Hunt in</b> Nairobi (Westlands, Kilimani, Lavington, Karen, Kileleshwa, CBD), plus Mombasa, Nakuru, Kisumu &amp; Eldoret. <b>Price in KES; collect via M-Pesa.</b></div></li>
+      </ul>
+    </div>
+    <div class="mkt reveal">
+      <h3><span class="flag">🇺🇸</span> United States</h3>
+      <div class="tline">The phone still rules — and it rings out.</div>
+      <ul>
+        <li><span class="ck">✓</span><div><b>A large share of calls go unanswered</b> — front desk busy, lunch, after 5pm, weekends. Every missed call to a service business is a job that walks to a competitor.</div></li>
+        <li><span class="ck">✓</span><div><b>First to respond wins.</b> Industry studies consistently show the business that replies first is far more likely to get the booking. An AI that answers in seconds beats a human callback hours later.</div></li>
+        <li><span class="ck">✓</span><div><b>Your edge:</b> a 24/7 AI that answers calls, texts and web chat, books instantly, and takes a card/deposit through Stripe — so no lead is lost to voicemail.</div></li>
+        <li><span class="ck">✓</span><div><b>Hunt in</b> growing suburbs &amp; mid-size metros where demand is high and competition is sleepy. <b>Price in USD; collect via Stripe.</b></div></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- DENTAL -->
+<section class="section tight" id="dental"><div class="wrap">
+  <div class="niche reveal">
+    <div class="niche-head">
+      <span class="ico">🦷</span><h3>Dental</h3>
+      <a class="see" href="dental.html" target="_blank">Open demo ↗</a>
+    </div>
+    <p class="why">Toothaches and lost crowns don't wait for office hours — patients Google at midnight and book whoever answers. A front desk on voicemail loses the most valuable, most urgent patients.</p>
+    <span class="math">The math: <b>one new patient ≈ $600–$1,200</b> on the first visit (and $1,000s lifetime) — or <b>KES 100k+</b> for one implant/braces case. Your monthly fee is paid back by a single saved booking.</span>
+  </div>
+  <div class="pros-grid">
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Westlands Smile Studio</b><span>Private dental clinic · Westlands, Nairobi</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Active Instagram full of patient smiles &amp; whitening reels, a Linktree instead of a website, and "DM to book" in the bio. Closed evenings, inbox full of unanswered "how much for braces?"</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>The AI replies to every whitening/Invisalign/implant DM in seconds, books the chair, and takes an M-Pesa deposit so the slot is real — capturing the after-hours inquiries they currently lose.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 45k</b></span><span>Monthly<b>KES 12k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Coast Family Dental</b><span>General dentist · Mombasa / Nakuru</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Solid Google reviews but a weak or missing website, bookings by phone only, lots of walk-ins. Searchers who find them on Maps have nowhere to book.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Turns Google searchers into booked appointments 24/7 instead of a phone number nobody answers after 5 — plus M-Pesa deposits for higher-value work.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 35k</b></span><span>Monthly<b>KES 8k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Bright Smiles Family Dental</b><span>General &amp; cosmetic · Austin TX / Phoenix AZ</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Dated site, no online scheduling, front desk swamped at lunch and gone by 5. Calls roll to voicemail — including the "my crown just fell out" emergency.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Captures the midnight emergency and the new-mover looking for a dentist, books them online, and sends reminders that cut no-shows. One new patient covers months of fees.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,200</b></span><span>Monthly<b>$300</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Lakeview Orthodontics</b><span>Ortho &amp; cosmetic · suburban US metro</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Spends on Google/Facebook ads for Invisalign &amp; implants, but leads that arrive after hours wait until morning for a callback — by then they've booked a rival.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Instant reply, financing answer, and a booked consult while the lead is hot. One Invisalign case is worth $4,000–$6,000 — they'll pay to stop leaking them.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,800</b></span><span>Monthly<b>$400</b></span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- MED-SPA -->
+<section class="section tight" id="medspa"><div class="wrap">
+  <div class="niche reveal">
+    <div class="niche-head">
+      <span class="ico">✨</span><h3>Med-Spa &amp; Aesthetics</h3>
+      <a class="see" href="medspa.html" target="_blank">Open demo ↗</a>
+    </div>
+    <p class="why">Aesthetics is an Instagram business — clients DM at 10pm about Botox, facials and laser. The clinic that replies instantly and locks in a deposit wins the booking and kills the no-show.</p>
+    <span class="math">The math: <b>one membership ≈ $200+/mo recurring</b>, one filler visit $600–$1,200 — or <b>KES 30k–80k</b> for a laser package. Deposits alone (fewer no-shows) often cover the fee.</span>
+  </div>
+  <div class="pros-grid">
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Lavington Glow Aesthetics</b><span>Skin &amp; aesthetics clinic · Nairobi</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Thousands of IG followers, before/afters everywhere, "DM to book." No website, no deposit system — so the calendar is chaos and no-shows are brutal.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Instant DM/WhatsApp replies, booked treatments, and an M-Pesa deposit that ends no-shows. The deposit feature alone sells itself.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 50k</b></span><span>Monthly<b>KES 12k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Karen Skin &amp; Laser Bar</b><span>Premium med-spa · Karen, Nairobi</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Upscale clientele, premium pricing, fully manual booking by phone/DM. No after-hours capture and no recurring-membership system.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>24/7 booking plus an automatic membership/package upsell that turns one-off facials into recurring M-Pesa revenue.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 60k</b></span><span>Monthly<b>KES 15k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Maven Aesthetics</b><span>Med-spa · Scottsdale AZ / Miami FL</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Heavy IG/TikTok presence, DMs flooding in at night, but a front desk that's 9–5 and a manual booking book. No-shows quietly eat the schedule.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Answers IG, text and web chat instantly, books the consult, and puts a card on file / takes a deposit to cut no-shows. One recurring membership pays the fee every month.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,500</b></span><span>Monthly<b>$400</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Renew MedSpa</b><span>Suburban med-spa · US</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Leans on Groupon and discount platforms, no owned booking funnel, no way to capture or re-market the leads they pay for.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Gives them their own funnel — instant booking, higher average ticket, repeat visits — so they stop renting customers from discount sites.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,200</b></span><span>Monthly<b>$350</b></span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- HVAC -->
+<section class="section tight" id="hvac"><div class="wrap">
+  <div class="niche reveal">
+    <div class="niche-head">
+      <span class="ico">❄️</span><h3>HVAC &amp; Cooling</h3>
+      <a class="see" href="hvac.html" target="_blank">Open demo ↗</a>
+    </div>
+    <p class="why">When the AC dies in a heatwave, the homeowner calls down the list until someone picks up. Techs are on jobs all day and can't answer — so the work goes to whoever's phone is staffed.</p>
+    <span class="math">The math: <b>one system replacement = $5,000–$12,000</b> in the US, or <b>KES 80k+</b> for an AC install &amp; service contract in Kenya. Miss one emergency call and you've lost more than a year of fees.</span>
+  </div>
+  <div class="pros-grid">
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Nairobi CoolTech Refrigeration &amp; AC</b><span>AC &amp; refrigeration · homes, offices, restaurants</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Runs entirely off WhatsApp and referrals, a phone number that's busy because the owner is up a ladder, no booking system, no website.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>The AI answers while every tech is on a job, captures the address and fault, books the visit, and takes an M-Pesa deposit on installs — so on-site work no longer costs them the next job.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 40k</b></span><span>Monthly<b>KES 10k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Coast Climate Solutions</b><span>Commercial &amp; residential AC · Mombasa</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Hot, humid coastal market with steady AC demand; serves shops, hotels and homes by phone tag. No way to capture commercial contract inquiries after hours.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Captures emergency repair calls and commercial AC-contract leads 24/7, books site surveys, and qualifies the big jobs before a competitor calls back.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 45k</b></span><span>Monthly<b>KES 12k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Cool Air Mechanical</b><span>Residential HVAC · Phoenix / Dallas / Houston</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Site looks 2009, no online booking, not mobile-friendly. After-hours and summer-surge calls roll to voicemail while the heat spikes demand.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Never miss the 9pm "house is 90° and my mom is 80" call — the AI triages urgency, books the visit, and texts an ETA. One replacement is worth thousands.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,200</b></span><span>Monthly<b>$350</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Comfort Pro Heating &amp; Air</b><span>Heating-heavy market · Midwest / Northeast</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Winter "no heat" emergencies swamp the phone lines all at once; the office can't keep up and books fill unevenly with painful no-shows.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Handles the storm-day call flood automatically, triages and dispatches, and sends reminders that keep the schedule full and on time.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,500</b></span><span>Monthly<b>$400</b></span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- LAW -->
+<section class="section tight" id="law"><div class="wrap">
+  <div class="niche reveal">
+    <div class="niche-head">
+      <span class="ico">⚖️</span><h3>Law (Injury &amp; Family)</h3>
+      <a class="see" href="law.html" target="_blank">Open demo ↗</a>
+    </div>
+    <p class="why">Accidents happen at night and on weekends, and victims call several firms — signing with whoever answers first. A firm that sends after-hours leads to voicemail loses its highest-value cases.</p>
+    <span class="math">The math: <b>one signed injury case = thousands to tens of thousands</b> in contingency fees; in Kenya, one retained matter can cover a year of your service. A single captured lead pays for everything.</span>
+  </div>
+  <div class="pros-grid">
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Nairobi Advocates LLP</b><span>Injury · conveyancing · family · Upper Hill</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Inquiries arrive by phone, WhatsApp and Facebook with no intake system; responses are slow and the website is thin or out of date.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Instant, confidential intake captures road-traffic accident and land/conveyancing inquiries 24/7 and books the consult before the lead cools — work they currently miss overnight.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 60k</b></span><span>Monthly<b>KES 15k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Coast Legal Chambers</b><span>General practice · Mombasa</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Runs on walk-ins and referrals, no digital intake, no after-hours coverage. Prospective clients who message at night get no reply.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>A WhatsApp intake assistant that captures the matter, screens it, and books a consult — turning a referral-only practice into one that books online too.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 50k</b></span><span>Monthly<b>KES 12k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Hale &amp; Crowe Injury Law</b><span>Personal injury · any US metro</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Spends heavily on Google/Local Service Ads, but after-hours leads hit an answering service or voicemail — and the first firm to call back gets retained.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>24/7 instant intake captures the case the night of the accident and books the attorney consult. One signed case returns the fee many times over.</p></div>
+      <div class="pc-price"><span>Setup<b>$2,000</b></span><span>Monthly<b>$500</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Sterling Family &amp; Estate Law</b><span>Family &amp; estate · suburban US</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Sensitive, emotional inquiries (divorce, custody, wills) that need a fast, discreet response — but the office only answers 9–5.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>A gentle, confidential 24/7 intake that captures the matter and books a consult — meeting people in the moment they finally reach out.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,800</b></span><span>Monthly<b>$450</b></span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- FITNESS -->
+<section class="section tight" id="fitness"><div class="wrap">
+  <div class="niche reveal">
+    <div class="niche-head">
+      <span class="ico">🏋️</span><h3>Fitness &amp; Studios</h3>
+      <a class="see" href="fitness.html" target="_blank">Open demo ↗</a>
+    </div>
+    <p class="why">People decide to get fit at 10pm on the couch and DM three gyms at once. The one that answers first books the trial and wins the membership — the others never hear back.</p>
+    <span class="math">The math: <b>one member ≈ $40–$200/mo</b> (US, $1,000+ lifetime) or <b>KES 3k–8k/mo recurring</b> in Kenya. A handful of saved trials and one win-back cover the fee with room to spare.</span>
+  </div>
+  <div class="pros-grid">
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Westlands Strength Club</b><span>Gym &amp; group fitness · Nairobi</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Big Instagram following, constant "how much?" and "do you have a trial?" DMs, signups handled manually, M-Pesa payments tracked in a notebook.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Instant replies to pricing DMs, a booked intro session, and recurring M-Pesa membership billing — converting curiosity into members on autopilot.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 40k</b></span><span>Monthly<b>KES 10k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Kilimani Yoga &amp; Pilates</b><span>Boutique studio · Nairobi</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Class bookings juggled over WhatsApp, no schedule or booking page, classes that run half-empty while DMs go unanswered.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Self-serve class booking with reminders and recurring M-Pesa packages — fuller classes, fewer no-shows, less admin for the owner.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 35k</b></span><span>Monthly<b>KES 9k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Forge Athletic Club</b><span>Gym / CrossFit box · any US city</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>IG/TikTok-driven, free-trial offers in the bio, but DMs at 10pm sit until morning — and the lead already joined a gym that replied.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Instant multi-channel replies, an automated free-trial funnel, and win-back messages for lapsed members. Member lifetime value is $1,000+.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,200</b></span><span>Monthly<b>$300</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Peak Performance Studio</b><span>Boutique fitness / personal training · US</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Sells higher-ticket PT packages and small-group training, but scheduling is manual and follow-up with new leads is inconsistent.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Books the intro consult, sells packages, and nudges renewals — protecting high-value clients and reducing churn.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,500</b></span><span>Monthly<b>$350</b></span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ROOFING -->
+<section class="section tight" id="roofing"><div class="wrap">
+  <div class="niche reveal">
+    <div class="niche-head">
+      <span class="ico">🏠</span><h3>Roofing &amp; Exteriors</h3>
+      <a class="see" href="roofing.html" target="_blank">Open demo ↗</a>
+    </div>
+    <p class="why">After a storm, every homeowner calls at once and the first responder books the job. The rest of the week decides the whole month — and a missed call is a five-figure job handed to a rival.</p>
+    <span class="math">The math: <b>one re-roof = $8,000–$25,000+</b> in the US, or <b>KES 150k+</b> for a re-roofing job in Kenya. Capturing a single storm lead pays for years of your service.</span>
+  </div>
+  <div class="pros-grid">
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Nairobi Mabati &amp; Roofing Co.</b><span>Roofing supply &amp; install · Nairobi</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Quote requests come by phone and WhatsApp, the owner is on-site all day, calls get missed, and there's no website to capture or qualify the job.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Captures re-roofing and repair quote requests 24/7, books the site visit, and takes an M-Pesa deposit to lock in serious jobs.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 45k</b></span><span>Monthly<b>KES 11k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇰🇪</span><div><b>Rift Valley Roofing</b><span>Residential &amp; agricultural · Nakuru / Eldoret</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Referral-driven regional builder, no digital intake, inquiries lost between job sites. Big build/repair demand, zero lead capture.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>24/7 quote capture and booked inspections turn word-of-mouth interest into a managed pipeline instead of missed calls.</p></div>
+      <div class="pc-price"><span>Setup<b>KES 40k</b></span><span>Monthly<b>KES 10k</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Summit Roofing &amp; Exteriors</b><span>Storm/hail belt · TX / CO / FL / Midwest</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Insurance-claim work, demand that spikes the instant a storm hits, and no after-hours capture — so the post-storm flood overwhelms the phone.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Answers every storm lead instantly, collects address and damage photos, and books the free inspection before a competitor picks up. One re-roof is five figures.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,500</b></span><span>Monthly<b>$400</b></span></div>
+    </div>
+    <div class="pcard reveal">
+      <div class="pc-head"><span class="flag">🇺🇸</span><div><b>Apex Exteriors</b><span>Roofing · siding · gutters · US</span></div></div>
+      <div class="pc-sec"><span class="pc-lbl">Spot them by</span><p>Seasonal demand surges, leads leaking to faster competitors, and a sales team too busy quoting to answer every new inquiry.</p></div>
+      <div class="pc-sec"><span class="pc-lbl">Why they'll pay</span><p>Instant response with photo intake and a booked inspection keeps the top of the funnel full during the few weeks that make the year.</p></div>
+      <div class="pc-price"><span>Setup<b>$1,800</b></span><span>Monthly<b>$450</b></span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section tight"><div class="wrap"><div class="cta reveal">
+  <h2>You've got the proof and the hit-list. Go get the first yes.</h2>
+  <p>Pick one niche, find five businesses that match the signals, pre-build their demo, and send your first five touches today.</p>
+  <a class="btn btn-primary" href="playbook.html" style="font-size:1.05rem;padding:16px 30px">Open the outreach playbook →</a>
+</div></div></section>
+
+<footer><div class="wrap">
+  <span><b style="color:var(--ink)">Beacon Studio</b> · Target Prospects · Kenya 🇰🇪 + US 🇺🇸</span>
+  <span>Archetypes, not real firms · match the signals · charge for value</span>
+</div></footer>
+
+<div class="demo-flag">🎯 <b>Prospects</b> — composite archetypes to match &amp; pitch, edit freely</div>
+
+<script src="https://unpkg.com/three@0.137.0/build/three.min.js"></script>
+<script src="assets/demo.js"></script>
+</body>
+</html>

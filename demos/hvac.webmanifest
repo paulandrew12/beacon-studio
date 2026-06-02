@@ -1,0 +1,25 @@
+{
+  "id": "./hvac.html",
+  "name": "Precision Climate Control",
+  "short_name": "Precision",
+  "description": "24/7 heating & air. No heat? No cool? Schedule same-day service in seconds.",
+  "start_url": "./hvac.html?utm_source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#070d15",
+  "theme_color": "#070d15",
+  "categories": ["business", "utilities"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "assets/icons/precision-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/precision-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/precision-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icons/precision-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Schedule service", "short_name": "Service", "url": "./hvac.html?utm_source=pwa#book" }
+  ]
+}

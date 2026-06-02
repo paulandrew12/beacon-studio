@@ -1,0 +1,25 @@
+{
+  "id": "./law.html",
+  "name": "Hale & Crowe Injury Law",
+  "short_name": "Hale & Crowe",
+  "description": "Injured? Free, confidential case review — no fee unless we win. Someone answers 24/7.",
+  "start_url": "./law.html?utm_source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#080c16",
+  "theme_color": "#080c16",
+  "categories": ["business", "government"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "assets/icons/hale-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/hale-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/hale-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icons/hale-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Free case review", "short_name": "Review", "url": "./law.html?utm_source=pwa#book" }
+  ]
+}

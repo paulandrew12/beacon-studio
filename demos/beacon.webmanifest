@@ -1,0 +1,22 @@
+{
+  "id": "./index.html",
+  "name": "Beacon Studio",
+  "short_name": "Beacon",
+  "description": "Modern websites + an AI receptionist that answers every call and books your calendar.",
+  "start_url": "./index.html?utm_source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#070710",
+  "theme_color": "#070710",
+  "categories": ["business", "productivity"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "assets/icons/beacon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/beacon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/beacon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "assets/icons/beacon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
