@@ -81,8 +81,7 @@ img{max-width:100%;display:block}
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:94vh;display:flex;align-items:center;overflow:hidden}
-#bg3d{position:absolute;inset:0;z-index:1;width:100%;height:100%;display:block;opacity:.5;mix-blend-mode:screen}
-.hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;filter:saturate(1.06) contrast(1.03)}
+.hero-video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;background:var(--bg);filter:saturate(1.05) contrast(1.02)}
 .hero::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
   background:linear-gradient(90deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 72%,transparent) 42%,transparent 68%),
              linear-gradient(180deg,transparent 52%,var(--bg) 100%)}
@@ -227,3 +226,118 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
 .pwa-install .pwa-x{margin-left:4px;padding:0 6px;border-radius:50%;color:var(--muted);font-size:1.05rem;line-height:1}
 .pwa-install .pwa-x:hover{color:var(--ink)}
 @media(max-width:560px){.pwa-install{bottom:14px;font-size:.86rem}}
+
+/* ============================================================
+   HERO VIDEO — a distinct layout & identity per niche
+   (replaces the old identical 3D-canvas heroes)
+   ============================================================ */
+
+/* ---- DENTAL: clinical, calm, centered & airy, soft radial light ---- */
+.t-dental .hero{min-height:90vh}
+.t-dental .hero-grid{grid-template-columns:1fr;justify-items:center;text-align:center;gap:30px;max-width:900px;margin:0 auto}
+.t-dental .hero p.sub{max-width:56ch;margin-left:auto;margin-right:auto}
+.t-dental .hero-cta{justify-content:center}
+.t-dental .hero-foot{justify-content:center}
+.t-dental .hero-video{filter:saturate(1.03) brightness(1.05)}
+.t-dental .hero::after{
+  background:
+    radial-gradient(120% 95% at 50% 28%,transparent 38%,color-mix(in srgb,var(--bg) 58%,transparent) 66%,var(--bg) 100%),
+    linear-gradient(180deg,color-mix(in srgb,var(--bg) 32%,transparent),transparent 30%,color-mix(in srgb,var(--bg) 80%,transparent))}
+.t-dental .glasscard{max-width:540px;margin:0 auto;text-align:left}
+
+/* ---- MEDSPA: editorial — framed, arched portrait video on the left, text right ---- */
+.t-medspa{--radius:26px}
+.t-medspa .hero{min-height:90vh}
+.t-medspa .hero-video{
+  inset:auto;top:8%;left:4%;width:42%;height:84%;object-fit:cover;
+  border-radius:160px 160px 28px 28px;
+  box-shadow:0 44px 110px -34px rgba(0,0,0,.75),0 0 0 1px color-mix(in srgb,var(--brand) 32%,transparent);
+  filter:saturate(1.08) contrast(1.02)}
+.t-medspa .hero::after{background:radial-gradient(58% 60% at 24% 42%,color-mix(in srgb,var(--brand) 15%,transparent),transparent 70%)}
+.t-medspa .hero-grid{grid-template-columns:46% 54%}
+.t-medspa .hero-grid>div:first-child{grid-column:2;padding-left:26px}
+.t-medspa .hero-grid>.reveal{display:none}
+@media(max-width:900px){
+  .t-medspa .hero-video{inset:0;top:0;bottom:0;left:0;width:100%;height:100%;border-radius:0;box-shadow:none}
+  .t-medspa .hero::after{background:linear-gradient(90deg,var(--bg),color-mix(in srgb,var(--bg) 70%,transparent) 45%,transparent 72%),linear-gradient(180deg,transparent 50%,var(--bg))}
+  .t-medspa .hero-grid{grid-template-columns:1fr}
+  .t-medspa .hero-grid>div:first-child{grid-column:1;padding-left:0}
+}
+
+/* ---- HVAC: industrial full-bleed, bold uppercase, orange emergency accent ---- */
+.t-hvac .hero{min-height:90vh;border-bottom:3px solid color-mix(in srgb,var(--brand-2) 70%,transparent)}
+.t-hvac .hero-video{filter:saturate(1.02) contrast(1.06)}
+.t-hvac .hero::after{
+  background:
+    linear-gradient(90deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 80%,transparent) 40%,transparent 66%),
+    linear-gradient(180deg,transparent 45%,var(--bg) 100%),
+    linear-gradient(90deg,color-mix(in srgb,var(--brand-2) 20%,transparent),transparent 28%)}
+.t-hvac h1.hh{text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(2.3rem,6vw,4.2rem)}
+.t-hvac .pill{border-radius:6px;color:var(--brand-2);background:color-mix(in srgb,var(--brand-2) 16%,transparent);border-color:color-mix(in srgb,var(--brand-2) 45%,transparent)}
+.t-hvac .pill .live{background:var(--brand-2)}
+
+/* ---- LAW: authoritative — hard rectangular video panel right, gold rules, sharp corners ---- */
+.t-law{--radius:6px}
+.t-law .hero{min-height:88vh}
+.t-law .hero-video{left:auto;right:0;width:44%;border-radius:0;
+  border-left:3px solid color-mix(in srgb,var(--brand) 80%,transparent);
+  filter:saturate(1.02) contrast(1.04) brightness(.9)}
+.t-law .hero::after{
+  background:
+    linear-gradient(90deg,var(--bg) 38%,color-mix(in srgb,var(--bg) 55%,transparent) 60%,transparent 80%),
+    linear-gradient(180deg,transparent 62%,var(--bg))}
+.t-law .hero-grid{grid-template-columns:1fr;max-width:680px}
+.t-law .hero-grid>.reveal{display:none}
+.t-law .pill{border-radius:2px}
+.t-law h1.hh{position:relative;padding-bottom:18px}
+.t-law h1.hh::after{content:"";position:absolute;left:0;bottom:0;width:92px;height:3px;background:linear-gradient(90deg,var(--brand),transparent)}
+@media(max-width:900px){
+  .t-law .hero-video{position:absolute;inset:0;width:100%;border-left:0}
+  .t-law .hero::after{background:linear-gradient(90deg,var(--bg),color-mix(in srgb,var(--bg) 68%,transparent) 46%,transparent 74%),linear-gradient(180deg,transparent 50%,var(--bg))}
+}
+
+/* ---- FITNESS: explosive — full-bleed, huge italic uppercase, bottom-anchored ---- */
+.t-fitness .hero{min-height:96vh;align-items:flex-end}
+.t-fitness .hero .wrap{padding-bottom:8vh;width:100%}
+.t-fitness .hero-video{filter:saturate(1.06) contrast(1.08)}
+.t-fitness .hero::after{
+  background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 42%,transparent) 0%,transparent 28%,transparent 44%,var(--bg) 100%)}
+.t-fitness .hero-grid{grid-template-columns:1fr;gap:16px}
+.t-fitness .hero-grid>.reveal{display:none}
+.t-fitness h1.hh{text-transform:uppercase;font-style:italic;line-height:.9;letter-spacing:-.02em;font-size:clamp(3rem,12vw,7.4rem);margin:14px 0}
+.t-fitness .hero p.sub{max-width:48ch}
+.t-fitness .pill{border-radius:4px;font-style:italic}
+
+/* ---- ROOFING: sturdy — full-bleed crew, REVERSED (card left / text right), bottom trust band ---- */
+.t-roofing .hero{min-height:90vh}
+.t-roofing .hero-video{filter:saturate(1.03) contrast(1.05)}
+.t-roofing .hero-grid{grid-template-columns:.82fr 1.18fr}
+.t-roofing .hero-grid>div:first-child{order:2}
+.t-roofing .hero-grid>.reveal{order:1}
+.t-roofing .hero::after{
+  background:
+    linear-gradient(270deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 74%,transparent) 42%,transparent 70%),
+    linear-gradient(180deg,transparent 40%,color-mix(in srgb,var(--bg) 90%,transparent) 86%,var(--bg) 100%)}
+.t-roofing h1.hh{font-size:clamp(2.3rem,5.6vw,4rem)}
+.t-roofing .pill{border-radius:4px}
+.t-roofing .glasscard{border-radius:10px;border-left:4px solid var(--brand)}
+@media(max-width:900px){
+  .t-roofing .hero-grid{grid-template-columns:1fr}
+  .t-roofing .hero-grid>div:first-child{order:0}
+  .t-roofing .hero-grid>.reveal{order:0}
+  .t-roofing .hero::after{background:linear-gradient(90deg,var(--bg),color-mix(in srgb,var(--bg) 70%,transparent) 46%,transparent 74%),linear-gradient(180deg,transparent 50%,var(--bg))}
+}
+
+/* ---- STUDIO (agency landing): living aurora gradient, no 3D / no video ---- */
+.t-studio .hero{min-height:92vh}
+.t-studio .hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(45vw 45vw at 18% 22%,color-mix(in srgb,var(--brand) 32%,transparent),transparent 60%),
+    radial-gradient(42vw 42vw at 82% 28%,color-mix(in srgb,var(--brand-2) 30%,transparent),transparent 60%),
+    radial-gradient(52vw 52vw at 60% 96%,color-mix(in srgb,var(--brand) 18%,transparent),transparent 66%);
+  filter:blur(8px);animation:aurora 18s ease-in-out infinite alternate}
+.t-studio .hero::after{background:linear-gradient(180deg,transparent 58%,var(--bg))}
+@keyframes aurora{
+  0%{transform:translate3d(-2%,-1%,0) scale(1.02)}
+  50%{transform:translate3d(2%,1.5%,0) scale(1.08)}
+  100%{transform:translate3d(-1%,2%,0) scale(1.05)}}
